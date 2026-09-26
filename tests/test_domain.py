@@ -117,6 +117,7 @@ class TestRepositoryRoundTrip(unittest.TestCase):
     def setUp(self):
         import db as db_module
         self._tmp = tempfile.NamedTemporaryFile(suffix=".db", delete=False)
+        self._tmp.close()
         db_module.DB_PATH = self._tmp.name
         db_module.init_db()
 
